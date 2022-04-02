@@ -1,8 +1,11 @@
 import createPallete from "./createPallete.js";
 import img from "./image.js";
+import getColors from "./getColors.js";
 
 //constants
 const random = document.getElementById("random");
+const cta = document.getElementById("cta");
+const callCTA = document.getElementById("callCTA");
 
 //color generation
 function colorGenerate(el) {
@@ -20,27 +23,29 @@ function updateExample() {
   const brand = document.getElementById("brand");
 
   //what color they take on
-  header.style.color = document.getElementById("id0").style.backgroundColor;
-  svg.style.fill = document.getElementById("id0").style.backgroundColor;
+  header.style.color = document.getElementById("id1").style.backgroundColor;
+  svg.style.fill = document.getElementById("id3").style.backgroundColor;
   dot.style.backgroundColor =
-    document.getElementById("id3").style.backgroundColor;
-  brand.style.color = document.getElementById("id3").style.backgroundColor;
+    document.getElementById("id2").style.backgroundColor;
+  brand.style.color = document.getElementById("id0").style.backgroundColor;
   button.style.backgroundColor =
-    document.getElementById("id3").style.backgroundColor;
+    document.getElementById("id2").style.backgroundColor;
   [...hamburger].forEach((el) => {
     el.style.backgroundColor =
-      document.getElementById("id3").style.backgroundColor;
+      document.getElementById("id0").style.backgroundColor;
   });
 }
 
 function changeColor(e) {
   let button = e.target.className;
+  console.log(button);
   const color = `rgb(${colorGenerate(225)}, ${colorGenerate(
     225
   )}, ${colorGenerate(225)})`;
   if (button.indexOf("color") !== -1) {
-    const target = e.target.parentElement.children[0];
-    target.children[0].innerText = color;
+    const target = e.target.parentElement.children[1];
+    console.log(target);
+    // target.children[0].innerText = color;
     target.style.backgroundColor = color;
   }
   updateExample();
@@ -64,5 +69,17 @@ const pallete = document.getElementsByClassName("box");
 });
 
 random.addEventListener("click", randomColorPalletCreation);
+cta.addEventListener("click", getColors);
+cta.addEventListener("click", function () {
+  callCTA.classList.toggle("open");
+  const elem = document.getElementById("cta-container");
+  if (callCTA.classList.contains("open")) {
+    callCTA.innerText = "Reset";
+    console.log(elem);
+  } else {
+    callCTA.innerText = "Get Colors";
+    elem.remove();
+  }
+});
 
 randomColorPalletCreation();

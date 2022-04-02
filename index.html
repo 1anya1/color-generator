@@ -16,18 +16,41 @@
   </head>
   <body>
     <div class="header">
-      <h1>Color Pallet</h1>
+      <h1 class="display-1">Color Pallete Generator</h1>
     </div>
     <div class="container" id="colorPallete">
       <button type="button" class="btn btn-primary" id="random">
         Random Generate
       </button>
-      <div class="row" id="pallete"></div>
+      <div class="row row-cols-2" id="pallete"></div>
     </div>
     <!-- Moc Up Home Page with Colors  -->
     <div class="example">
+      <nav class="navbar navbar-expand-lg bg">
+        <a class="navbar-brand" href="#">MyBrand</a>
+        <div class="container-fluid">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
       <div class="row">
-        <div class="'header col-sm-6">
+        <div class="side-menu">
+          <ul>
+            <li id="active"></li>
+            <li></li>
+            <li></li>
+          </ul>
+        </div>
+        <div class="header col-sm-6">
           <h1 id="header" class="display-2">Heading Text</h1>
           <h5>This is my subtext. This will be your regular text color</h5>
           <button type="button" class="btn" id="buttonExample">
@@ -38,13 +61,7 @@
           <div id="imageExample"></div>
         </div>
       </div>
-      <div class="side-menu">
-        <ul>
-          <li id="active"></li>
-          <li></li>
-          <li></li>
-        </ul>
-      </div>
+      <div id="exampleDiv"></div>
     </div>
   </body>
 </html>

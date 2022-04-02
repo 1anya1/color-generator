@@ -11122,33 +11122,84 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+#pallete {
+  row-gap: 24px;
+}
+
 .colorBox {
   height: 150px;
-  width: 90vw;
-  border-radius: 20px 0;
+  border-radius: 20px 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
 }
 @media (min-width: 576px) {
   .colorBox {
-    width: 200px;
     height: 200px;
   }
 }
+.colorBox button:first-child {
+  margin-bottom: 10px;
+}
 
+.example {
+  width: 90%;
+  border: 1px solid #000;
+  border-radius: 20px;
+  margin: 0 auto;
+  margin-top: 40px;
+}
 .example .row {
+  padding: 50px 0;
   align-items: center;
+  flex-direction: column;
+}
+@media (min-width: 768px) {
+  .example .row .col-sm-6 {
+    width: unset;
+  }
+}
+.example .row .col-sm-6 #imageExample {
+  display: flex;
+  justify-content: center;
+}
+@media (min-width: 768px) {
+  .example .row {
+    flex-direction: row;
+  }
 }
 .example .row .header {
-  padding-left: 10px;
+  text-align: center;
+}
+@media (min-width: 768px) {
+  .example .row .header {
+    padding-left: 80px;
+    text-align: left;
+    width: 50%;
+  }
 }
 
 #svg {
   width: 85vw;
   height: auto;
 }
-@media (min-width: 576px) {
+@media (min-width: 768px) {
   #svg {
-    width: 50vw;
+    width: 40vw;
   }
+}
+
+.side-menu {
+  position: absolute;
+}
+
+#exampleDiv {
+  height: 300px;
+}
+
+#buttonExample {
+  margin-top: 80px;
 }
 
 /*# sourceMappingURL=main.css.map */

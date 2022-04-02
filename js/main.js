@@ -11,19 +11,17 @@ function colorGenerate(el) {
 //dependencies on color pallet dynamic website layout
 function changeHeading() {
   const header = document.getElementById("header");
-  header.style.color = document.getElementById("id0").style.backgroundColor;
-}
-function firstLi() {
   const li = document.getElementById("active");
-  console.log(li);
-  li.style.color = document.getElementById("id3").style.backgroundColor;
   const svg = document.getElementById("svg").children[0];
-  svg.style.fill = document.getElementById("id2").style.backgroundColor;
-}
-function buttonExample() {
   const button = document.getElementById("buttonExample");
+  const div = document.getElementById("exampleDiv");
+  header.style.color = document.getElementById("id0").style.backgroundColor;
+  svg.style.fill = document.getElementById("id0").style.backgroundColor;
+  li.style.color = document.getElementById("id3").style.backgroundColor;
   button.style.backgroundColor =
     document.getElementById("id3").style.backgroundColor;
+  div.style.backgroundColor =
+    document.getElementById("id1").style.backgroundColor;
 }
 
 function changeColor(e) {

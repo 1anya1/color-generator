@@ -9,7 +9,7 @@ function createPallete() {
       <div class="colorBox" id="id${i}">
       <p class="h6">color</p>
       </div>
-      <button type="button" class="btn btn-primary color">
+      <button type="button" class="btn btn-primary color ">
         Change Color
       </button>
       `;

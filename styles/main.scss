@@ -14,9 +14,30 @@ p,
 h1,
 a {
   color: $primary;
+  text-decoration: none !important;
+}
+.lead {
+  margin-bottom: 4px;
 }
 //importing bootstrap variables to update with changes above
-@import "../node_modules/bootstrap/scss/bootstrap";
+@import "../node_modules/bootstrap/scss/functions";
+
+// 2. Include any default variable overrides here
+
+// 3. Include remainder of required Bootstrap stylesheets
+@import "../node_modules/bootstrap/scss/variables";
+@import "../node_modules/bootstrap/scss/mixins";
+@import "../node_modules/bootstrap/scss/root";
+@import "../node_modules/bootstrap/scss/buttons";
+@import "../node_modules/bootstrap/scss/navbar";
+@import "../node_modules/bootstrap/scss/containers";
+@import "../node_modules/bootstrap/scss/grid";
+@import "../node_modules/bootstrap/scss/utilities";
+@import "../node_modules/bootstrap/scss/reboot";
+@import "../node_modules/bootstrap/scss/type";
+
+// 5. Optionally include utilities API last to generate classes based on the Sass map in `_utilities.scss`
+@import "../node_modules/bootstrap/scss/utilities/api";
 
 // mobile first development
 
@@ -47,17 +68,17 @@ a {
       padding-bottom: 10px;
       .colorBox {
         height: 150px;
+        min-width: 150px;
         border-radius: 20px 0px;
         display: flex;
         justify-content: center;
         align-items: center;
         margin-bottom: 10px;
-        button {
-          &:first-child {
-            margin-bottom: 10px;
-          }
-        }
       }
+    }
+    .color {
+      width: 100%;
+      margin: 0 auto;
     }
   }
 }
@@ -164,6 +185,7 @@ a {
 @include media-breakpoint-up(sm) {
   .colorBox {
     height: 200px;
+    width: 200px;
   }
 }
 //for screen that are larger than

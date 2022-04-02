@@ -13,16 +13,18 @@ function colorGenerate(el) {
 function updateExample() {
   //all the elements to change
   const header = document.getElementById("header");
-  const li = document.getElementById("active");
+  const dot = document.getElementById("active");
   const svg = document.getElementById("svg").children[0];
   const button = document.getElementById("buttonExample");
-  const div = document.getElementById("exampleDiv");
   const hamburger = document.getElementsByClassName("mobile-nav");
+  const brand = document.getElementById("brand");
 
   //what color they take on
   header.style.color = document.getElementById("id0").style.backgroundColor;
   svg.style.fill = document.getElementById("id0").style.backgroundColor;
-  li.style.color = document.getElementById("id3").style.backgroundColor;
+  dot.style.backgroundColor =
+    document.getElementById("id3").style.backgroundColor;
+  brand.style.color = document.getElementById("id3").style.backgroundColor;
   button.style.backgroundColor =
     document.getElementById("id3").style.backgroundColor;
   [...hamburger].forEach((el) => {

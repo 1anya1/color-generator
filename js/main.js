@@ -10,19 +10,25 @@ function colorGenerate(el) {
 }
 
 //dependencies on color pallet dynamic website layout
-function changeHeading() {
+function updateExample() {
+  //all the elements to change
   const header = document.getElementById("header");
   const li = document.getElementById("active");
   const svg = document.getElementById("svg").children[0];
   const button = document.getElementById("buttonExample");
   const div = document.getElementById("exampleDiv");
+  const hamburger = document.getElementsByClassName("mobile-nav");
+
+  //what color they take on
   header.style.color = document.getElementById("id0").style.backgroundColor;
   svg.style.fill = document.getElementById("id0").style.backgroundColor;
   li.style.color = document.getElementById("id3").style.backgroundColor;
   button.style.backgroundColor =
     document.getElementById("id3").style.backgroundColor;
-  div.style.backgroundColor =
-    document.getElementById("id1").style.backgroundColor;
+  [...hamburger].forEach((el) => {
+    el.style.backgroundColor =
+      document.getElementById("id3").style.backgroundColor;
+  });
 }
 
 function changeColor(e) {
@@ -35,9 +41,7 @@ function changeColor(e) {
     target.children[0].innerText = color;
     target.style.backgroundColor = color;
   }
-  changeHeading();
-  firstLi();
-  buttonExample();
+  updateExample();
 }
 function randomColorPalletCreation() {
   let boxes = document.getElementsByClassName("colorBox");
@@ -48,9 +52,7 @@ function randomColorPalletCreation() {
     box.style.backgroundColor = color;
     box.children[0].innerText = color;
   });
-  changeHeading();
-  firstLi();
-  buttonExample();
+  updateExample();
 }
 
 //event handlers on click

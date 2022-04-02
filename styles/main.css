@@ -11227,8 +11227,8 @@ textarea.form-control-lg {
   margin: 30px auto;
 }
 #example .example .row #exampleSplash #svg {
-  width: 85vw;
-  height: auto;
+  width: 90%;
+  height: 90%;
 }
 
 .side-menu {
@@ -11290,6 +11290,7 @@ textarea.form-control-lg {
   }
   #example .example .row #exampleSplash #svg {
     width: 40vw;
+    height: 40vw;
   }
 }
 @media (min-width: 992px) {

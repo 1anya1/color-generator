@@ -10,7 +10,9 @@
       href="/node_modules/bootstrap/dist/css/bootstrap.min.css"
     />
     <link rel="stylesheet" href="/styles/main.css" />
-    <script src="/main.js" defer></script>
+    <scipt type="module" src="./js/createPallete.js"></scipt>
+    <script type="module" src="./js/image.js"></script>
+    <script type="module" src="/js/main.js" defer></script>
   </head>
   <body>
     <div class="header">
@@ -22,9 +24,26 @@
       </button>
       <div class="row" id="pallete"></div>
     </div>
+    <!-- Moc Up Home Page with Colors  -->
     <div class="example">
-      <div>
-        <h1 id="header">Heading Text</h1>
+      <div class="row">
+        <div class="'header col-sm-6">
+          <h1 id="header" class="display-2">Heading Text</h1>
+          <h5>This is my subtext. This will be your regular text color</h5>
+          <button type="button" class="btn" id="buttonExample">
+            Learn More
+          </button>
+        </div>
+        <div id="exampleSplash" class="col-sm-6">
+          <div id="imageExample"></div>
+        </div>
+      </div>
+      <div class="side-menu">
+        <ul>
+          <li id="active"></li>
+          <li></li>
+          <li></li>
+        </ul>
       </div>
     </div>
   </body>

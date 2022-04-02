@@ -12,7 +12,6 @@ function createPallete() {
       <button type="button" class="btn btn-primary color">
         Change Color
       </button>
-      <button type="button" class="btn btn-primary">Lock Color</button>
       `;
     el.innerHTML = html;
     colorPallete.appendChild(el);

@@ -1,5 +1,6 @@
 import createPallete from "./createPallete.js";
 import img from "./image.js";
+
 //constants
 const random = document.getElementById("random");
 

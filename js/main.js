@@ -1,11 +1,14 @@
 import createPallete from "./createPallete.js";
 import img from "./image.js";
 import getColors from "./getColors.js";
+import footer from "./footer.js";
+import nav from "./nav.js";
 
 //constants
 const random = document.getElementById("random");
 const cta = document.getElementById("cta");
 const callCTA = document.getElementById("callCTA");
+const root = document.getElementById("root");
 
 //color generation
 function colorGenerate(el) {
@@ -61,7 +64,16 @@ function randomColorPalletCreation() {
   });
   updateExample();
 }
-
+function generateColorList() {
+  callCTA.classList.toggle("open");
+  const elem = document.getElementById("cta-container");
+  if (callCTA.classList.contains("open")) {
+    callCTA.innerText = "Close";
+  } else {
+    callCTA.innerText = "Get Colors";
+    elem.remove();
+  }
+}
 //event handlers on click
 const pallete = document.getElementsByClassName("box");
 [...pallete].forEach((el) => {
@@ -69,17 +81,9 @@ const pallete = document.getElementsByClassName("box");
 });
 
 random.addEventListener("click", randomColorPalletCreation);
-cta.addEventListener("click", getColors);
-cta.addEventListener("click", function () {
-  callCTA.classList.toggle("open");
-  const elem = document.getElementById("cta-container");
-  if (callCTA.classList.contains("open")) {
-    callCTA.innerText = "Reset";
-    console.log(elem);
-  } else {
-    callCTA.innerText = "Get Colors";
-    elem.remove();
-  }
-});
+callCTA.addEventListener("click", getColors);
+callCTA.addEventListener("click", generateColorList);
+root.append(footer);
+root.prepend(nav);
 
 randomColorPalletCreation();

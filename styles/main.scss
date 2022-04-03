@@ -69,7 +69,8 @@ a {
       .colorBox {
         height: 150px;
         min-width: 155px;
-        width: auto;
+        // max-width: 155px;
+        // width: auto;
         border-radius: 20px 0px;
         display: flex;
         justify-content: center;
@@ -181,12 +182,39 @@ a {
     width: 20px;
   }
 }
-
+footer {
+  background-color: $primary;
+  padding: 50px 0;
+  .links {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    column-gap: 10px;
+    a {
+      img {
+        width: 40px;
+        height: 40px;
+      }
+    }
+  }
+  p {
+    color: white;
+    text-align: center;
+    padding-top: 20px;
+  }
+}
+#cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px 0;
+}
 //for screen that are larger than
 @include media-breakpoint-up(sm) {
   .colorBox {
     height: 200px;
-    width: 200px;
+    max-width: unset;
+    width: unset;
   }
 }
 //for screen that are larger than

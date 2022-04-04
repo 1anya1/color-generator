@@ -3439,7 +3439,7 @@ nav .container-fluid, nav .container-sm, nav .container-md, nav .container-lg, n
   padding: 0;
 }
 nav .container-fluid img, nav .container-sm img, nav .container-md img, nav .container-lg img, nav .container-xl img, nav .container-xxl img {
-  height: 30px;
+  height: 45px;
 }
 nav .container-fluid #hamburger, nav .container-sm #hamburger, nav .container-md #hamburger, nav .container-lg #hamburger, nav .container-xl #hamburger, nav .container-xxl #hamburger {
   display: flex;

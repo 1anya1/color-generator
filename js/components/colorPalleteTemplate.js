@@ -6,7 +6,7 @@ pallete.id = "pallete";
 pallete.classList.add("grid");
 colorPalleteTemplate.append(pallete);
 
-const elementNames = ["Nav Bar", "Heading", "Button", "Hero"];
+const elementNames = ["Nav Bar", "Heading Text", "Button", "Hero Image"];
 function createPallete() {
   for (let i = 0; i < 4; i++) {
     const el = document.createElement("div");

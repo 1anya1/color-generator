@@ -87,7 +87,7 @@ function getColors() {
 }
 function assignValues() {
   const id = ["id0", "id1", "id2", "id3"];
-  const names = ["NavBar: ", "Heading: ", "Button: ", "Hero: "];
+  const names = ["Nav Bar: ", "Heading Text: ", "Button: ", "Hero Image: "];
   const myColors = [];
   for (let i = 0; i < 4; i++) {
     let el = document.getElementById(id[i]).style.backgroundColor;

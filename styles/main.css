@@ -8,9 +8,10 @@
 
 p,
 h1,
-a {
-  color: #192b53 !important;
-  text-decoration: none !important;
+a,
+.nav-link {
+  color: #192b53;
+  text-decoration: none;
 }
 
 .lead {
@@ -2237,11 +2238,6 @@ a {
     --bs-gutter-y: 3rem;
   }
 }
-a {
-  color: #192b53 !important;
-  text-decoration: none !important;
-}
-
 .navView div *:not(.bar) {
   opacity: 0.75;
 }

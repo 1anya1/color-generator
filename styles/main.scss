@@ -1,8 +1,8 @@
 // overide of some Bootstrap elements
 $primary: #192b53;
 $secondary: #b31451;
-h6 {
-  color: white;
+.h6 {
+  color: white !important;
 }
 $btn-border-width: unset;
 $btn-border-radius: 20px;
@@ -13,34 +13,43 @@ $btn-border-radius-lg: 20px;
 p,
 h1,
 a {
-  color: $primary;
+  color: $primary !important;
   text-decoration: none !important;
 }
 .lead {
   margin-bottom: 4px;
 }
 $enable-cssgrid: true;
-//importing bootstrap variables to update with changes above
 @import "../node_modules/bootstrap/scss/functions";
-
-// 2. Include any default variable overrides here
-
-// 3. Include remainder of required Bootstrap stylesheets
 @import "../node_modules/bootstrap/scss/variables";
 @import "../node_modules/bootstrap/scss/mixins";
-@import "../node_modules/bootstrap/scss/root";
 @import "../node_modules/bootstrap/scss/buttons";
-@import "../node_modules/bootstrap/scss/navbar";
-@import "../node_modules/bootstrap/scss/containers";
 @import "../node_modules/bootstrap/scss/grid";
-@import "../node_modules/bootstrap/scss/utilities";
-@import "../node_modules/bootstrap/scss/reboot";
-@import "../node_modules/bootstrap/scss/type";
+// //importing bootstrap variables to update with changes above
+// @import "../node_modules/bootstrap/scss/functions";
 
-// 5. Optionally include utilities API last to generate classes based on the Sass map in `_utilities.scss`
-@import "../node_modules/bootstrap/scss/utilities/api";
+// // 2. Include any default variable overrides here
+
+// // 3. Include remainder of required Bootstrap stylesheets
+// @import "../node_modules/bootstrap/scss/variables";
+// @import "../node_modules/bootstrap/scss/mixins";
+// @import "../node_modules/bootstrap/scss/root";
+// @import "../node_modules/bootstrap/scss/buttons";
+// // @import "../node_modules/bootstrap/scss/navbar";
+// @import "../node_modules/bootstrap/scss/containers";
+// @import "../node_modules/bootstrap/scss/grid";
+// @import "../node_modules/bootstrap/scss/utilities";
+// @import "../node_modules/bootstrap/scss/reboot";
+// @import "../node_modules/bootstrap/scss/type";
+
+// // // 5. Optionally include utilities API last to generate classes based on the Sass map in `_utilities.scss`
+// @import "../node_modules/bootstrap/scss/utilities/api";
 
 // mobile first development
+a {
+  color: $primary !important;
+  text-decoration: none !important;
+}
 .navView {
   div *:not(.bar) {
     opacity: 0.75;
@@ -185,7 +194,7 @@ nav {
     background-color: white;
     width: 90%;
     max-width: 1300px;
-    border: 1px solid $black;
+    border: 1px solid black;
     border-radius: 20px;
     margin: 0 auto;
     overflow: hidden;

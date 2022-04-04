@@ -1,16 +1,22 @@
-import createPallete from "./createPallete.js";
-import img from "./image.js";
-import getColors from "./getColors.js";
-import footer from "./footer.js";
-import nav from "./nav.js";
+import footer from "./components/footer.js";
+import nav from "./components/nav.js";
+import headerTemplate from "./components/headerTemplate.js";
+import colorPalleteTemplate from "./components/colorPalleteTemplate.js";
+import exampleTemplate from "./components/exampleTemplate.js";
+import ctaTemplate from "./components/ctaTemplate.js";
+
+const root = document.getElementById("root");
+root.append(nav);
+root.append(headerTemplate);
+root.append(colorPalleteTemplate);
+root.append(exampleTemplate);
+root.append(ctaTemplate);
+root.append(footer);
 
 //constants
 const random = document.getElementById("random");
-const cta = document.getElementById("cta");
 const callCTA = document.getElementById("callCTA");
-const root = document.getElementById("root");
 
-//color generation
 function colorGenerate(el) {
   return Math.floor(Math.random() * el);
 }
@@ -41,13 +47,11 @@ function updateExample() {
 
 function changeColor(e) {
   let button = e.target.className;
-  console.log(button);
   const color = `rgb(${colorGenerate(225)}, ${colorGenerate(
     225
   )}, ${colorGenerate(225)})`;
   if (button.indexOf("color") !== -1) {
     const target = e.target.parentElement.children[1];
-    console.log(target);
     // target.children[0].innerText = color;
     target.style.backgroundColor = color;
   }
@@ -64,11 +68,36 @@ function randomColorPalletCreation() {
   });
   updateExample();
 }
+let prnt = document.getElementById("cta");
+
+function getColors() {
+  if (!callCTA.classList.contains("open")) {
+    let colors = assignValues();
+    let div = document.createElement("TEXTAREA");
+    div.rows = 5;
+    div.classList.add("container-sm");
+    div.id = "cta-container";
+    colors.forEach((el) => {
+      div.value += el + "\r\n";
+    });
+    prnt.append(div);
+  }
+}
+function assignValues() {
+  const id = ["id0", "id1", "id2", "id3"];
+  const names = ["NavBar: ", "Heading: ", "Button: ", "Hero: "];
+  const myColors = [];
+  for (let i = 0; i < 4; i++) {
+    let el = document.getElementById(id[i]).style.backgroundColor;
+    myColors.push(names[i] + el);
+  }
+  return myColors;
+}
 function generateColorList() {
   callCTA.classList.toggle("open");
   const elem = document.getElementById("cta-container");
   if (callCTA.classList.contains("open")) {
-    callCTA.innerText = "Close";
+    callCTA.innerText = "Reset";
   } else {
     callCTA.innerText = "Get Colors";
     elem.remove();
@@ -83,7 +112,5 @@ const pallete = document.getElementsByClassName("box");
 random.addEventListener("click", randomColorPalletCreation);
 callCTA.addEventListener("click", getColors);
 callCTA.addEventListener("click", generateColorList);
-root.append(footer);
-root.prepend(nav);
 
 randomColorPalletCreation();

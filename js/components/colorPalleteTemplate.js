@@ -1,10 +1,16 @@
-//dynamic creation of pallete of 4 colors
+const colorPalleteTemplate = document.createElement("div");
+
+colorPalleteTemplate.id = "colorPallete";
+const pallete = document.createElement("div");
+pallete.id = "pallete";
+pallete.classList.add("grid");
+colorPalleteTemplate.append(pallete);
+
 const elementNames = ["Nav Bar", "Heading", "Button", "Hero"];
 function createPallete() {
-  const colorPallete = document.getElementById("pallete");
   for (let i = 0; i < 4; i++) {
     const el = document.createElement("div");
-    el.classList = "col box";
+    el.classList.add("g-col-6", "g-col-lg-3", "box");
     const html = `
       <p class='lead'>${elementNames[i]}</p>
       <div class="colorBox" id="id${i}">  
@@ -15,9 +21,9 @@ function createPallete() {
       </button>
       `;
     el.innerHTML = html;
-    colorPallete.appendChild(el);
+    pallete.append(el);
   }
 }
 createPallete();
 
-export default createPallete;
+export default colorPalleteTemplate;

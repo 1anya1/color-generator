@@ -1,3 +1,4 @@
+const root = document.getElementById("root");
 const footer = document.createElement("footer");
 const svg = document.createElement("div");
 const images = ["websiteLink.svg", "gitHub.svg", "linkedIn.svg"];
@@ -16,7 +17,7 @@ for (let i = 0; i < 3; i++) {
   svg.append(link);
 }
 const info = document.createElement("p");
-info.innerText = "Made with love by Anna Filatova";
+info.innerText = "Created by Anna Filatova";
 footer.append(svg);
 footer.append(info);
 

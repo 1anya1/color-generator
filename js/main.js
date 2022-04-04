@@ -76,7 +76,7 @@ function getColors() {
   if (!callCTA.classList.contains("open")) {
     let colors = assignValues();
     let div = document.createElement("TEXTAREA");
-    div.rows = 5;
+    div.rows = 4;
     div.classList.add("container-sm");
     div.id = "cta-container";
     colors.forEach((el) => {

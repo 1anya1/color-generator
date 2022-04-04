@@ -16,7 +16,7 @@ h1,
 a,
 .nav-link {
   color: $primary;
-  text-decoration: none;
+  text-decoration: none !important;
 }
 .lead {
   margin-bottom: 4px;
@@ -30,8 +30,9 @@ $enable-cssgrid: true;
 @import "../node_modules/bootstrap/scss/reboot";
 @import "../node_modules/bootstrap/scss/type";
 @import "../node_modules/bootstrap/scss/containers";
-// mobile first development
+@import "../node_modules/bootstrap/scss/navbar";
 
+// mobile first development
 .navView {
   div *:not(.bar) {
     opacity: 0.75;
@@ -129,7 +130,7 @@ nav {
     padding: 0;
 
     img {
-      height: 40px;
+      height: 30px;
     }
     #hamburger {
       display: flex;
@@ -138,8 +139,8 @@ nav {
       align-items: flex-end;
       z-index: 2;
       .bar {
-        width: 46px;
-        height: 6px;
+        width: 36px;
+        height: 4px;
         background-color: $primary;
         transition: transform 0.3s ease-in-out, opacity 0.15s ease-in-out;
       }
@@ -159,7 +160,7 @@ nav {
     background-color: white !important;
   }
   .bar-three {
-    transform: translate(0px, -12px) rotate(45deg);
+    transform: translate(0px, -8px) rotate(45deg);
     background-color: white !important;
   }
   .bar-two {
@@ -348,8 +349,10 @@ footer {
   }
 }
 nav {
-  img {
-    height: 50px !important;
+  .container-fluid {
+    img {
+      height: 40px;
+    }
   }
 }
 

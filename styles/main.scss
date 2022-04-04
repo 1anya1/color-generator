@@ -130,7 +130,9 @@ nav {
     padding: 0;
 
     img {
-      height: 45px;
+      min-height: 45px;
+      height: 7vw;
+      max-width: 80px;
     }
     #hamburger {
       display: flex;
@@ -345,13 +347,6 @@ footer {
           }
         }
       }
-    }
-  }
-}
-nav {
-  .container-fluid {
-    img {
-      height: 40px;
     }
   }
 }

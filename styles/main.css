@@ -3439,7 +3439,9 @@ nav .container-fluid, nav .container-sm, nav .container-md, nav .container-lg, n
   padding: 0;
 }
 nav .container-fluid img, nav .container-sm img, nav .container-md img, nav .container-lg img, nav .container-xl img, nav .container-xxl img {
-  height: 45px;
+  min-height: 45px;
+  height: 7vw;
+  max-width: 80px;
 }
 nav .container-fluid #hamburger, nav .container-sm #hamburger, nav .container-md #hamburger, nav .container-lg #hamburger, nav .container-xl #hamburger, nav .container-xxl #hamburger {
   display: flex;
@@ -3642,10 +3644,6 @@ footer p {
     height: 40vw;
   }
 }
-nav .container-fluid img, nav .container-sm img, nav .container-md img, nav .container-lg img, nav .container-xl img, nav .container-xxl img {
-  height: 40px;
-}
-
 @media (min-width: 992px) {
   .container-fluid .navbar-nav, .container-sm .navbar-nav, .container-md .navbar-nav, .container-lg .navbar-nav, .container-xl .navbar-nav, .container-xxl .navbar-nav {
     display: flex !important;

@@ -1,8 +1,10 @@
+import img from "./image.js";
 const exampleTemplate = document.createElement("div");
+exampleTemplate.id = "example";
 const html = `
 <div class="example">
   <nav class="navbar navbar-expand-lg bg">
-    <a class="navbar-brand" id="brand" href="#">MyBrand</a>
+    <a class="navbar-brand" id="brand" href="#">LOGO</a>
     <div class="container-fluid">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
@@ -28,7 +30,7 @@ const html = `
       </div>
     </div>
   </nav>
-  <div class="row">
+  <div class="row rowExample">
     <div class="side-menu">
       <div class="loc">
         <div id="active" class="dot"></div>
@@ -48,7 +50,7 @@ const html = `
       </button>
     </div>
     <div id="exampleSplash" class="col-sm-6">
-      <div id="imageExample"></div>
+      <div id="imageExample">${img}</div>
     </div>
   </div>
 </div>

@@ -1,3 +1,4 @@
+const root = document.getElementById("root");
 const headerTemplate = document.createElement("div");
 
 const html = `<div class="banner">

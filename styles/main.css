@@ -2262,8 +2262,7 @@ body.open {
   padding-top: 30vh;
   padding-left: 50px;
   z-index: 1;
-  width: 70vw !important;
-  max-width: 400px;
+  width: 100vw !important;
   height: 100vh;
   background-color: #192b53;
   right: 0;
@@ -2341,7 +2340,7 @@ nav .container-fluid {
   padding: 0;
 }
 nav .container-fluid img {
-  height: 60px;
+  height: 40px;
 }
 nav .container-fluid #hamburger {
   display: flex;
@@ -2515,6 +2514,11 @@ footer p {
     height: 200px;
     width: 100%;
   }
+
+  #slider.open {
+    width: 70vw !important;
+    max-width: 400px;
+  }
 }
 @media (min-width: 768px) {
   #example .example .row {
@@ -2537,6 +2541,10 @@ footer p {
     height: 40vw;
   }
 }
+nav img {
+  height: 50px !important;
+}
+
 @media (min-width: 992px) {
   .container-fluid .navbar-nav {
     display: flex !important;

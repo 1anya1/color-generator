@@ -25,25 +25,6 @@ $enable-cssgrid: true;
 @import "../node_modules/bootstrap/scss/mixins";
 @import "../node_modules/bootstrap/scss/buttons";
 @import "../node_modules/bootstrap/scss/grid";
-// //importing bootstrap variables to update with changes above
-// @import "../node_modules/bootstrap/scss/functions";
-
-// // 2. Include any default variable overrides here
-
-// // 3. Include remainder of required Bootstrap stylesheets
-// @import "../node_modules/bootstrap/scss/variables";
-// @import "../node_modules/bootstrap/scss/mixins";
-// @import "../node_modules/bootstrap/scss/root";
-// @import "../node_modules/bootstrap/scss/buttons";
-// // @import "../node_modules/bootstrap/scss/navbar";
-// @import "../node_modules/bootstrap/scss/containers";
-// @import "../node_modules/bootstrap/scss/grid";
-// @import "../node_modules/bootstrap/scss/utilities";
-// @import "../node_modules/bootstrap/scss/reboot";
-// @import "../node_modules/bootstrap/scss/type";
-
-// // // 5. Optionally include utilities API last to generate classes based on the Sass map in `_utilities.scss`
-// @import "../node_modules/bootstrap/scss/utilities/api";
 
 // mobile first development
 a {
@@ -71,8 +52,7 @@ body.open {
   padding-top: 30vh;
   padding-left: 50px;
   z-index: 1;
-  width: 70vw !important;
-  max-width: 400px;
+  width: 100vw !important;
   height: 100vh;
   background-color: $primary;
   right: 0;
@@ -148,7 +128,7 @@ nav {
     padding: 0;
 
     img {
-      height: 60px;
+      height: 40px;
     }
     #hamburger {
       display: flex;
@@ -333,6 +313,10 @@ footer {
 
     width: 100%;
   }
+  #slider.open {
+    width: 70vw !important;
+    max-width: 400px;
+  }
 }
 //for screen that are larger than
 @include media-breakpoint-up(md) {
@@ -360,6 +344,11 @@ footer {
         }
       }
     }
+  }
+}
+nav {
+  img {
+    height: 50px !important;
   }
 }
 

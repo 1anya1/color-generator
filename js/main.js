@@ -4,6 +4,7 @@ import headerTemplate from "./components/headerTemplate.js";
 import colorPalleteTemplate from "./components/colorPalleteTemplate.js";
 import exampleTemplate from "./components/exampleTemplate.js";
 import ctaTemplate from "./components/ctaTemplate.js";
+import slide from "./components/slide.js";
 
 const root = document.getElementById("root");
 root.append(nav);
@@ -16,6 +17,7 @@ root.append(footer);
 //constants
 const random = document.getElementById("random");
 const callCTA = document.getElementById("callCTA");
+const hamburger = document.getElementById("hamburger");
 
 function colorGenerate(el) {
   return Math.floor(Math.random() * el);
@@ -103,14 +105,26 @@ function generateColorList() {
     elem.remove();
   }
 }
+
+function toggleMenu() {
+  hamburger.classList.toggle("open");
+  slide.classList.toggle("open");
+  root.classList.toggle("navView");
+  document.body.classList.toggle("open");
+}
 //event handlers on click
-const pallete = document.getElementsByClassName("box");
+const pallete = document.getElementsByClassName("color");
 [...pallete].forEach((el) => {
   el.addEventListener("click", changeColor);
+});
+const links = document.getElementsByClassName("nav-links");
+[...links].forEach((el) => {
+  el.addEventListener("click", toggleMenu);
 });
 
 random.addEventListener("click", randomColorPalletCreation);
 callCTA.addEventListener("click", getColors);
 callCTA.addEventListener("click", generateColorList);
+hamburger.addEventListener("click", toggleMenu);
 
 randomColorPalletCreation();

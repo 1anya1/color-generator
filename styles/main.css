@@ -3561,6 +3561,7 @@ nav .container-fluid #hamburger .bar-two, nav .container-sm #hamburger .bar-two,
   flex-direction: column;
   align-items: flex-end;
   row-gap: 3px;
+  margin-right: 12px;
 }
 .mobile .long,
 .mobile .short {

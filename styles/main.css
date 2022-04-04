@@ -8012,6 +8012,9 @@ body.open {
 #slider.open div a {
   color: white;
 }
+#slider.open div a button {
+  width: 100%;
+}
 
 .banner {
   width: 90%;

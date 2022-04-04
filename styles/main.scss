@@ -1,4 +1,5 @@
 // overide of some Bootstrap elements
+@import "../node_modules/bootstrap/scss/functions";
 $primary: #192b53;
 $secondary: #b31451;
 .h6 {
@@ -12,25 +13,22 @@ $btn-border-radius-lg: 20px;
 }
 p,
 h1,
-a {
-  color: $primary !important;
-  text-decoration: none !important;
+a,
+.nav-link {
+  color: $primary;
+  text-decoration: none;
 }
 .lead {
   margin-bottom: 4px;
 }
 $enable-cssgrid: true;
-@import "../node_modules/bootstrap/scss/functions";
 @import "../node_modules/bootstrap/scss/variables";
 @import "../node_modules/bootstrap/scss/mixins";
 @import "../node_modules/bootstrap/scss/buttons";
 @import "../node_modules/bootstrap/scss/grid";
 
 // mobile first development
-a {
-  color: $primary !important;
-  text-decoration: none !important;
-}
+
 .navView {
   div *:not(.bar) {
     opacity: 0.75;

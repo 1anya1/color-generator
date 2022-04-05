@@ -1,4 +1,3 @@
-const footer = document.createElement("footer");
 const svg = document.createElement("div");
 const images = ["websiteLink.svg", "gitHub.svg", "linkedIn.svg"];
 const url = [
@@ -16,9 +15,4 @@ for (let i = 0; i < 3; i++) {
   svg.append(link);
 }
 
-const info = document.createElement("p");
-info.innerText = `Created by Anna Filatova © ${new Date().getFullYear()}`;
-footer.append(svg);
-footer.append(info);
-
-export default footer;
+export default svg;

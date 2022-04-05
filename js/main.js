@@ -5,6 +5,8 @@ import colorPalleteTemplate from "./components/colorPalleteTemplate.js";
 import exampleTemplate from "./components/exampleTemplate.js";
 import ctaTemplate from "./components/ctaTemplate.js";
 import slide from "./components/slide.js";
+import solidLock from "./svg/solidLock.js";
+import solidUnlock from "./svg/solidUnlock.js";
 
 const root = document.getElementById("root");
 root.append(nav);
@@ -48,25 +50,45 @@ function updateExample() {
 }
 
 function changeColor(e) {
-  let button = e.target.className;
-  const color = `rgb(${colorGenerate(225)}, ${colorGenerate(
-    225
-  )}, ${colorGenerate(225)})`;
-  if (button.indexOf("color") !== -1) {
+  let parent = e.target.parentElement.children[1];
+  if (!parent.classList.contains("locked")) {
+    const color = `rgb(${colorGenerate(225)}, ${colorGenerate(
+      225
+    )}, ${colorGenerate(225)})`;
+    let val = e.target.parentElement.children[3];
+
     const target = e.target.parentElement.children[1];
     target.children[0].innerText = color;
     target.style.backgroundColor = color;
   }
   updateExample();
 }
+
+// Lock Unlock Functionality For the Palette
+function lock(e) {
+  lockScreen(e);
+  // lockButton(e);
+}
+function lockScreen(e) {
+  e.path[2].children[2].classList.toggle("locked");
+  e.path[1].classList.toggle("locked");
+  e.path[0].classList.toggle("locked");
+
+  e.path[0].classList.contains("locked")
+    ? (e.path[0].innerHTML = solidUnlock)
+    : (e.path[0].innerHTML = solidLock);
+}
+
 function randomColorPalletCreation() {
   let boxes = document.getElementsByClassName("colorBox");
   [...boxes].forEach((box) => {
-    const color = `rgb(${colorGenerate(225)}, ${colorGenerate(
-      225
-    )}, ${colorGenerate(225)})`;
-    box.style.backgroundColor = color;
-    box.children[0].innerText = color;
+    if (!box.classList.contains("locked")) {
+      const color = `rgb(${colorGenerate(225)}, ${colorGenerate(
+        225
+      )}, ${colorGenerate(225)})`;
+      box.style.backgroundColor = color;
+      box.children[0].innerText = color;
+    }
   });
   updateExample();
 }
@@ -99,7 +121,7 @@ function generateColorList() {
   callCTA.classList.toggle("open");
   const elem = document.getElementById("cta-container");
   if (callCTA.classList.contains("open")) {
-    callCTA.innerText = "Reset";
+    callCTA.innerText = "Close";
   } else {
     callCTA.innerText = "Get Colors";
     elem.remove();
@@ -117,6 +139,12 @@ const pallete = document.getElementsByClassName("color");
 [...pallete].forEach((el) => {
   el.addEventListener("click", changeColor);
 });
+
+const lockColor = document.getElementsByClassName("lockSVG");
+[...lockColor].forEach((el) => {
+  el.addEventListener("click", lock);
+});
+
 const links = document.getElementsByClassName("nav-links");
 [...links].forEach((el) => {
   el.addEventListener("click", toggleMenu);

@@ -1,3 +1,4 @@
+import solidLock from "../svg/solidLock.js";
 const colorPalleteTemplate = document.createElement("div");
 
 colorPalleteTemplate.id = "colorPallete";
@@ -15,10 +16,12 @@ function createPallete() {
       <p class='lead'>${elementNames[i]}</p>
       <div class="colorBox" id="id${i}">  
       <p class="h6">color</p>
+      <div class="lockSVG">${solidLock}</div>
       </div>
       <button type="button" class="btn btn-primary color ">
         Change Color
       </button>
+     
       `;
     el.innerHTML = html;
     pallete.append(el);
@@ -27,3 +30,9 @@ function createPallete() {
 createPallete();
 
 export default colorPalleteTemplate;
+
+{
+  /* <button type="button" class="btn btn-primary lock ">
+Lock
+</button> */
+}

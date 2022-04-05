@@ -1,7 +1,13 @@
 // overide of some Bootstrap elements
 @import "../node_modules/bootstrap/scss/functions";
 $primary: #192b53;
-$secondary: #b31451;
+
+$secondary: rgb(164, 176, 204);
+// Nav Bar: rgb(102, 139, 99)
+// Heading Text: rgb(72, 56, 92)
+// Button: rgb(8, 67, 92)
+// Hero Image: rgb(4, 111, 30)
+
 .h6 {
   color: white !important;
 }
@@ -10,6 +16,13 @@ $btn-border-radius: 20px;
 $btn-border-radius-lg: 20px;
 .btn {
   border: unset;
+  &:focus,
+  &:active {
+    box-shadow: unset !important;
+    filter: opacity(0.85);
+
+    // background-color: rgba(25, 43, 83, 0.75) !important;
+  }
 }
 p,
 h1,
@@ -31,7 +44,8 @@ $enable-cssgrid: true;
 @import "../node_modules/bootstrap/scss/type";
 @import "../node_modules/bootstrap/scss/containers";
 @import "../node_modules/bootstrap/scss/navbar";
-
+@import "./nav.scss";
+@import "./slidingMenu.scss";
 // mobile first development
 .navView {
   div *:not(.bar) {
@@ -40,37 +54,6 @@ $enable-cssgrid: true;
 }
 body.open {
   overflow: hidden;
-}
-
-#slider {
-  width: 0vw;
-  height: 0;
-  overflow: hidden;
-  //   transition: width 0.5s ease-in-out;
-}
-#slider.open {
-  transition: width 0.3s ease-in;
-  display: flex;
-  padding-top: 30vh;
-  padding-left: 50px;
-  z-index: 1;
-  width: 100vw !important;
-  height: 100vh;
-  background-color: $primary;
-  right: 0;
-  position: absolute;
-  div {
-    display: flex;
-    flex-direction: column;
-    row-gap: 10px;
-    width: 90%;
-    a {
-      color: white;
-      button {
-        width: 100%;
-      }
-    }
-  }
 }
 
 .banner {
@@ -109,67 +92,54 @@ body.open {
         height: 150px;
         border-radius: 20px 0px;
         display: flex;
+        position: relative;
         justify-content: center;
         align-items: center;
         margin-bottom: 10px;
+        border: 2px solid $white;
+        .lockSVG {
+          position: absolute;
+          top: 8px;
+          right: 8px;
+          height: 24px;
+          width: 24px;
+          z-index: 0;
+          svg {
+            position: relative;
+            z-index: -1;
+            path {
+              fill: white;
+            }
+          }
+        }
+      }
+    }
+    .lockSVG.locked {
+      svg {
+        path {
+          fill: $secondary;
+        }
       }
     }
     .color {
       width: 100%;
       margin: 0 auto;
     }
-  }
-}
-nav {
-  padding-top: 12px;
-  max-width: 1500px;
-  margin: 0 auto;
-  width: 90%;
-  .container-fluid {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0;
 
-    img {
-      min-height: 45px;
-      height: 7vw;
-      max-width: 80px;
+    .colorBox.locked {
+      background-color: white;
+      color: $primary;
+      border-color: $primary;
     }
-    #hamburger {
-      display: flex;
-      flex-direction: column;
-      row-gap: 6px;
-      align-items: flex-end;
-      z-index: 2;
-      .bar {
-        width: 36px;
-        height: 4px;
-        background-color: $primary;
-        transition: transform 0.3s ease-in-out, opacity 0.15s ease-in-out;
-      }
-      .bar-two {
-        width: 46px;
-        opacity: 1;
-      }
+
+    .color.locked {
+      background-color: rgba(25, 43, 83, 0.35) !important;
+
+      pointer-events: none;
     }
-  }
-}
-.open {
-  .bar {
-    transition: transform 0.3s ease-in-out, opacity 0.15s ease-in-out;
-  }
-  .bar-one {
-    transform: translate(0px, 12px) rotate(-45deg);
-    background-color: white !important;
-  }
-  .bar-three {
-    transform: translate(0px, -8px) rotate(45deg);
-    background-color: white !important;
-  }
-  .bar-two {
-    opacity: 0 !important;
+    .lock {
+      margin-top: 6px;
+    }
   }
 }
 
@@ -320,10 +290,6 @@ footer {
     height: 200px;
 
     width: 100%;
-  }
-  #slider.open {
-    width: 70vw !important;
-    max-width: 400px;
   }
 }
 //for screen that are larger than

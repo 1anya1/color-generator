@@ -13,7 +13,9 @@ $btn-border-radius-lg: 20px;
   &:focus,
   &:active {
     box-shadow: unset !important;
-    background-color: rgba(25, 43, 83, 0.75) !important;
+    filter: opacity(0.85);
+
+    // background-color: rgba(25, 43, 83, 0.75) !important;
   }
 }
 p,
@@ -144,6 +146,13 @@ body.open {
               fill: white;
             }
           }
+        }
+      }
+    }
+    .lockSVG.locked {
+      svg {
+        path {
+          fill: $secondary;
         }
       }
     }

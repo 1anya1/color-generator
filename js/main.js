@@ -52,7 +52,6 @@ function updateExample() {
 function changeColor(e) {
   let parent = e.target.parentElement.children[1];
   if (!parent.classList.contains("locked")) {
-    console.log("its locked");
     const color = `rgb(${colorGenerate(225)}, ${colorGenerate(
       225
     )}, ${colorGenerate(225)})`;

@@ -8,7 +8,7 @@
 }
 .btn:focus, .btn:active {
   box-shadow: unset !important;
-  background-color: rgba(25, 43, 83, 0.75) !important;
+  filter: opacity(0.85);
 }
 
 p,
@@ -3454,6 +3454,9 @@ body.open {
 }
 #colorPallete #pallete .box .colorBox .lockSVG svg path {
   fill: white;
+}
+#colorPallete #pallete .lockSVG.locked svg path {
+  fill: #b31451;
 }
 #colorPallete #pallete .color {
   width: 100%;

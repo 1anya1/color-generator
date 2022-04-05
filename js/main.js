@@ -143,6 +143,10 @@ const pallete = document.getElementsByClassName("color");
 const lockColor = document.getElementsByClassName("lockSVG");
 [...lockColor].forEach((el) => {
   el.addEventListener("click", lock);
+  el.addEventListener("touchstart", () => {});
+  el.addEventListener("touchend", () => {});
+  el.addEventListener("touchcancel", () => {});
+  el.addEventListener("touchmove", () => {});
 });
 
 const links = document.getElementsByClassName("nav-links");

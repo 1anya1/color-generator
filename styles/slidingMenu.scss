@@ -21,6 +21,7 @@
     align-items: center;
     svg {
       position: relative;
+      transform: scale(0.2);
       animation: slidein 3s;
       height: 150px;
     }

@@ -70,13 +70,15 @@ function lock(e) {
   // lockButton(e);
 }
 function lockScreen(e) {
-  e.path[2].children[2].classList.toggle("locked");
-  e.path[1].classList.toggle("locked");
-  e.path[0].classList.toggle("locked");
-
-  e.path[0].classList.contains("locked")
-    ? (e.path[0].innerHTML = solidUnlock)
-    : (e.path[0].innerHTML = solidLock);
+  const button = e.target.parentNode.parentNode.children[2];
+  const svg = e.target;
+  const box = e.target.parentElement;
+  button.classList.toggle("locked");
+  box.classList.toggle("locked");
+  svg.classList.toggle("locked");
+  svg.classList.contains("locked")
+    ? (svg.innerHTML = solidUnlock)
+    : (svg.innerHTML = solidLock);
 }
 
 function randomColorPalletCreation() {
@@ -143,10 +145,6 @@ const pallete = document.getElementsByClassName("color");
 const lockColor = document.getElementsByClassName("lockSVG");
 [...lockColor].forEach((el) => {
   el.addEventListener("click", lock);
-  el.addEventListener("touchstart", () => {});
-  el.addEventListener("touchend", () => {});
-  el.addEventListener("touchcancel", () => {});
-  el.addEventListener("touchmove", () => {});
 });
 
 const links = document.getElementsByClassName("nav-links");

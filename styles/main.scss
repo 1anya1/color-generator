@@ -104,6 +104,8 @@ body.open {
           height: 24px;
           width: 24px;
           z-index: 1;
+          cursor: pointer;
+
           svg {
             position: relative;
             z-index: -1;
@@ -114,13 +116,7 @@ body.open {
         }
       }
     }
-    .lockSVG.locked {
-      svg {
-        path {
-          fill: $secondary;
-        }
-      }
-    }
+
     .color {
       width: 100%;
       margin: 0 auto;

@@ -3537,6 +3537,7 @@ body.open {
   height: 24px;
   width: 24px;
   z-index: 1;
+  cursor: pointer;
 }
 #colorPallete #pallete .box .colorBox .lockSVG svg {
   position: relative;
@@ -3544,9 +3545,6 @@ body.open {
 }
 #colorPallete #pallete .box .colorBox .lockSVG svg path {
   fill: white;
-}
-#colorPallete #pallete .lockSVG.locked svg path {
-  fill: #a4b0cc;
 }
 #colorPallete #pallete .color {
   width: 100%;

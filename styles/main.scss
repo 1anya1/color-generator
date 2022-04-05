@@ -99,16 +99,22 @@ body.open {
         border: 2px solid $white;
         .lockSVG {
           position: absolute;
-          top: 8px;
-          right: 8px;
-          height: 24px;
-          width: 24px;
+          height: 100%;
+          width: 100%;
+          //   top: 8px;
+          //   right: 8px;
+          //   height: 24px;
+          //   width: 24px;
           z-index: 1;
           cursor: pointer;
 
           svg {
+            pointer-events: none;
             position: relative;
             z-index: -1;
+            float: right;
+            top: 8px;
+            right: 8px;
             path {
               fill: white;
             }

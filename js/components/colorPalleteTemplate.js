@@ -1,4 +1,4 @@
-import solidLock from "../svg/solidLock.js";
+import solidLock from "./svg/solidLock.js";
 const colorPalleteTemplate = document.createElement("div");
 
 colorPalleteTemplate.id = "colorPallete";

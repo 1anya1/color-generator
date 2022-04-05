@@ -5,9 +5,10 @@ import colorPalleteTemplate from "./components/colorPalleteTemplate.js";
 import exampleTemplate from "./components/exampleTemplate.js";
 import ctaTemplate from "./components/ctaTemplate.js";
 import slide from "./components/slide.js";
-import solidLock from "./svg/solidLock.js";
-import solidUnlock from "./svg/solidUnlock.js";
+import solidLock from "./components/svg/solidLock.js";
+import solidUnlock from "./components/svg/solidUnlock.js";
 
+//populating DOM with components
 const root = document.getElementById("root");
 root.append(nav);
 root.append(headerTemplate);
@@ -67,7 +68,7 @@ function changeColor(e) {
 // Lock Unlock Functionality For the Palette
 function lock(e) {
   lockScreen(e);
-  // lockButton(e);
+  checkAllBoxes();
 }
 function lockScreen(e) {
   const button = e.target.parentNode.parentNode.children[2];
@@ -80,9 +81,20 @@ function lockScreen(e) {
     ? (svg.innerHTML = solidUnlock)
     : (svg.innerHTML = solidLock);
 }
+function checkAllBoxes() {
+  const boxes = document.getElementsByClassName("colorBox");
+  const button = document.getElementById("random");
+  if ([...boxes].every((el) => el.classList.contains("locked"))) {
+    console.log((button.style.backgroundColor = "rgb(164, 176, 204)"));
+  } else {
+    button.style.backgroundColor = "#192b53";
+  }
+}
 
-function randomColorPalletCreation() {
+function randomColorPalletCreation(e) {
+  console.log(e);
   let boxes = document.getElementsByClassName("colorBox");
+
   [...boxes].forEach((box) => {
     if (!box.classList.contains("locked")) {
       const color = `rgb(${colorGenerate(225)}, ${colorGenerate(

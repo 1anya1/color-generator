@@ -3349,6 +3349,7 @@ progress {
   padding-top: 12px;
   margin: 0 auto;
   padding: 12px 5%;
+  background-color: #ececec;
   margin-bottom: 20px;
 }
 #nav .container-fluid, #nav .container-sm, #nav .container-md, #nav .container-lg, #nav .container-xl, #nav .container-xxl {

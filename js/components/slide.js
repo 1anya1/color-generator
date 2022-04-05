@@ -9,6 +9,7 @@ const html = `<div>
   </div>`;
 slide.innerHTML = html;
 const div = document.createElement("div");
+div.className = "logo";
 div.innerHTML = logo;
 slide.prepend(div);
 slide.append(svg);

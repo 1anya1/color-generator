@@ -70,6 +70,7 @@ function lock(e) {
   // lockButton(e);
 }
 function lockScreen(e) {
+  console.log(e);
   e.path[2].children[2].classList.toggle("locked");
   e.path[1].classList.toggle("locked");
   e.path[0].classList.toggle("locked");

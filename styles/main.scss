@@ -10,6 +10,11 @@ $btn-border-radius: 20px;
 $btn-border-radius-lg: 20px;
 .btn {
   border: unset;
+  &:focus,
+  &:active {
+    box-shadow: unset !important;
+    background-color: rgba(25, 43, 83, 0.75) !important;
+  }
 }
 p,
 h1,
@@ -51,7 +56,8 @@ body.open {
 #slider.open {
   transition: width 0.3s ease-in;
   display: flex;
-  padding-top: 30vh;
+  flex-direction: column;
+  justify-content: space-evenly;
   padding-left: 50px;
   z-index: 1;
   width: 100vw !important;
@@ -69,6 +75,16 @@ body.open {
       button {
         width: 100%;
       }
+    }
+  }
+  .links {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    column-gap: 10px;
+    img {
+      width: 40px;
+      height: 40px;
     }
   }
 }
@@ -109,14 +125,46 @@ body.open {
         height: 150px;
         border-radius: 20px 0px;
         display: flex;
+        position: relative;
         justify-content: center;
         align-items: center;
         margin-bottom: 10px;
+        border: 2px solid $white;
+        .lockSVG {
+          position: absolute;
+          top: 8px;
+          right: 8px;
+          height: 24px;
+          width: 24px;
+          z-index: 0;
+          svg {
+            position: relative;
+            z-index: -1;
+            path {
+              fill: white;
+            }
+          }
+        }
       }
     }
     .color {
       width: 100%;
       margin: 0 auto;
+    }
+
+    .colorBox.locked {
+      background-color: white;
+      color: $primary;
+      border-color: $primary;
+    }
+
+    .color.locked {
+      background-color: rgba(25, 43, 83, 0.35) !important;
+
+      pointer-events: none;
+    }
+    .lock {
+      margin-top: 6px;
     }
   }
 }

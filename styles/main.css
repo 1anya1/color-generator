@@ -3392,7 +3392,10 @@ body.open {
   margin: 0 auto;
 }
 .banner h1, .banner .h1 {
-  padding-bottom: 20px;
+  padding-bottom: 5px;
+}
+.banner p {
+  margin-bottom: 30px;
 }
 .banner button {
   width: 100%;

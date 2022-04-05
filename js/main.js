@@ -54,7 +54,7 @@ function changeColor(e) {
   )}, ${colorGenerate(225)})`;
   if (button.indexOf("color") !== -1) {
     const target = e.target.parentElement.children[1];
-    // target.children[0].innerText = color;
+    target.children[0].innerText = color;
     target.style.backgroundColor = color;
   }
   updateExample();
